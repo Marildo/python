@@ -128,3 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 tk/.idea/
+calculadora/.idea/
+api_flask/.idea/
