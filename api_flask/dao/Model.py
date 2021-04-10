@@ -5,11 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from datetime import datetime
 from flask_marshmallow import Marshmallow
 
-host = 'localhost'
-user = 'root'
-password = '411225'
-
-engine = create_engine('sqlite:///test.db', echo=True)
+engine = create_engine('sqlite:///test_api.db', echo=True)
 
 session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
 session.configure(bind=engine)

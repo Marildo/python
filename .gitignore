@@ -130,3 +130,5 @@ dmypy.json
 tk/.idea/
 calculadora/.idea/
 api_flask/.idea/
+flask/.idea/
+

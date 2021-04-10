@@ -1,4 +1,5 @@
 from tkinter import *
+from view import Label12Blue
 
 app = Tk()
 app.title("Tk Inter")
@@ -10,4 +11,7 @@ txt1.place(x=10, y=10, width=100, height=20)
 
 txt2 = Label(app, text="Segundo label", bg="#ffb", fg="#aad")
 txt2.pack(ipadx=1, ipady=1, padx=2, pady=3, side="top")
+
+labelA = Label12Blue(app, "Meu segundo label")
+labelA.pack()
 app.mainloop()
