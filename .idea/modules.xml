@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/CallsController.iml" filepath="$PROJECT_DIR$/.idea/CallsController.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/python_rep.iml" filepath="$PROJECT_DIR$/.idea/python_rep.iml" />
     </modules>
   </component>
 </project>
