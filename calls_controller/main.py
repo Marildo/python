@@ -2,6 +2,9 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from view.mainWindow import Ui_MainWindow
 
+import utils.logger
+from model.connection import DBConnection
+
 
 class MainWindowControll(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -14,6 +17,8 @@ class MainWindowControll(QMainWindow, Ui_MainWindow):
 
     def on_click(self):
         print('Eu fui clicado')
+        connection = DBConnection()
+        connection.connectar()
 
 
 if __name__ == "__main__":
