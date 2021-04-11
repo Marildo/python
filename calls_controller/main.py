@@ -18,7 +18,7 @@ class MainWindowControll(QMainWindow, Ui_MainWindow):
     def on_click(self):
         print('Eu fui clicado')
         connection = DBConnection()
-        connection.connectar()
+        connection.connect()
 
 
 if __name__ == "__main__":

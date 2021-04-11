@@ -1,21 +1,37 @@
-from sqlalchemy import create_engine
 import logging
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm.session import sessionmaker
+
+from model.tables import Base
+
 
 class DBConnection:
 
     def __init__(self):
-        # TODO colocar em arquivo de configuracao
-        self.user = 'root'
-        self.password = 'si411225'
-        self.host = 'localhost'
-        self.database = 'world'
-        self.charset = 'utf8mb4'
+        #self.__engine = None
+        self.__session = None
 
-    def connectar(self):
+    def connect(self):
         try:
-            engine = create_engine(
-                f'mysql+pymysql://{self.user}:{self.password}@{self.host}/{self.database}?charset={self.charset}')
-            connect = engine.connect()
-            logging.info(f'Conectado a base dados em {self.host}')
+            engine = create_engine(self.builder_url(), pool_timeout=1000, echo=True)
+            self.__session = sessionmaker(engine)()
+            Base.metadata.create_all(engine)
         except Exception as e:
-            print(e)
+            logging.error(f'Erro ao conectar ao banco de dados. Erro:{e}')
+
+    @property
+    def get_session(self):
+        return self.__session
+
+    def builder_url(self):
+        # TODO colocar em arquivo de configuracao
+        user = 'root'
+        password = 'si411225'
+        port = 3306
+        host = 'localhost'
+        database = 'call_controller'
+        charset = 'utf8mb4'
+        logging.info(f'Conectando a base dados em {self.__host}')
+        return f'mysql+pymysql://{user}:{password}@{host}:{port}/{database}?charset={charset}'
+
