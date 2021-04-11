@@ -9,19 +9,18 @@ from model.tables import Base
 class DBConnection:
 
     def __init__(self):
-        #self.__engine = None
         self.__session = None
 
     def connect(self):
         try:
             engine = create_engine(self.builder_url(), pool_timeout=1000, echo=True)
-            self.__session = sessionmaker(engine)()
+            self.__session = sessionmaker(bind=engine)()
             Base.metadata.create_all(engine)
         except Exception as e:
             logging.error(f'Erro ao conectar ao banco de dados. Erro:{e}')
 
     @property
-    def get_session(self):
+    def session(self):
         return self.__session
 
     def builder_url(self):
@@ -32,6 +31,9 @@ class DBConnection:
         host = 'localhost'
         database = 'call_controller'
         charset = 'utf8mb4'
-        logging.info(f'Conectando a base dados em {self.__host}')
+        logging.info(f'Conectando a base dados em {host}')
         return f'mysql+pymysql://{user}:{password}@{host}:{port}/{database}?charset={charset}'
 
+    def test(self, any):
+        self.__session.add(any)
+        self.__session.commit()
