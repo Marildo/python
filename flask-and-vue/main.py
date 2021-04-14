@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request, abort
-app = Flask('VoooHelp', static_folder='front/static', template_folder='front')
+app = Flask('VoooHelp', static_folder='static', template_folder='templates')
 
 
 @app.route('/')
