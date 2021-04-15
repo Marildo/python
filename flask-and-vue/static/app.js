@@ -3,7 +3,10 @@ const HelloVueApp = {
 
     data() {
         return {
-            message: 'Hello Vue!!'
+            message: 'Hello Vue!!',
+            pokemons: [
+                'Blue', 'Gold', 'Diamond'
+            ]
         }
     },
 

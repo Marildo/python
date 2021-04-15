@@ -12,9 +12,14 @@
 <body>
     <div id="app">
         <my-header subtitle='Hello friend' /></my-header>
-        <my-header  ></my-header>
-        <div>
-          
+        
+        <ul >
+            <li v-for="(pokemon, index) in pokemons" :key='index'>
+                <mc-pokemon :pokemon=pokemon></mc-pokemon>
+            </li>
+        </ul>
+        
+        <div>          
             <h1>Index</h1>
             <input type="text" v-model="message" /> <button v-on:click="reverseMessage">Reverse Message</button>
             <div>
@@ -30,6 +35,7 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
     <script src="{{ url_for('static', filename='header-comp.js') }}"></script>
+    <script src="{{ url_for('static', filename='pokemon.js') }}"></script>
     <script >
         app.mount('#app')
     </script>
