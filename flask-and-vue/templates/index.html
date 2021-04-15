@@ -15,7 +15,7 @@
         
         <ul >
             <li v-for="(pokemon, index) in pokemons" :key='index'>
-                <mc-pokemon :pokemon=pokemon></mc-pokemon>
+               [[index]]:  <mc-pokemon :pokemon=pokemon></mc-pokemon>
             </li>
         </ul>
         
@@ -34,8 +34,8 @@
 
     <script src="https://unpkg.com/vue@next"></script>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
-    <script src="{{ url_for('static', filename='header-comp.js') }}"></script>
-    <script src="{{ url_for('static', filename='pokemon.js') }}"></script>
+    <script src="{{ url_for('static', filename='components/header.js') }}"></script>
+    <script src="{{ url_for('static', filename='components/pokemon.js') }}"></script>
     <script >
         app.mount('#app')
     </script>
