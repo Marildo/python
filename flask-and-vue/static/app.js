@@ -1,5 +1,6 @@
 const HelloVueApp = {
     delimiters: ['[[', ']]'],
+
     data() {
         return {
             message: 'Hello Vue!!'
@@ -16,4 +17,20 @@ const HelloVueApp = {
     }
 }
 
-Vue.createApp(HelloVueApp).mount('#app')
+const MyHeader = {
+    template: `<h2>Eu sou o o header: {{ title + subtitle}}</h2>`,
+
+    props: ['subtitle'],
+
+    data() {
+        return {
+            title: 'My title - '
+        }
+    }
+}
+
+const app = Vue.createApp(HelloVueApp)
+
+app.component('my-header', MyHeader)
+
+app.mount('#app')

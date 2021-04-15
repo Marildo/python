@@ -10,12 +10,16 @@
 </head>
 
 <body>
-    <h1>Index</h1>
     <div id="app">
-        <input type="text" v-model="message" /> <button v-on:click="reverseMessage">Reverse Message</button>
         <div>
-            Message: [[ message ]]
+
+            <h1>Index</h1>
+            <input type="text" v-model="message" /> <button v-on:click="reverseMessage">Reverse Message</button>
+            <div>
+                Message: [[ message ]]
+            </div>
         </div>
+        <my-header subtitle='Hello friend' ></my-header>
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
