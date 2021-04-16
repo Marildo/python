@@ -1,6 +1,18 @@
-from flask import Flask, render_template, redirect, url_for, request, abort
-app = Flask('VoooHelp', static_folder='static', template_folder='templates')
+from flask import Flask, render_template
+from flask_cors import CORS
 
+app = Flask('VoooHelp', static_folder='static', template_folder='templates')
+app.config['CORS_HEADERS'] = 'application/json'
+
+"""
+cors = CORS(app,
+            resources={
+                r"*": {
+                    "origins": "*"
+                }
+            })
+
+"""
 
 @app.route('/')
 def index():
