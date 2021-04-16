@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask_cors import CORS
 
-app = Flask('VoooHelp', static_folder='static', template_folder='templates')
+app = Flask('Flask_AND_VUE', static_folder='static', template_folder='templates')
 app.config['CORS_HEADERS'] = 'application/json'
 
 """

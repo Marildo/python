@@ -1,9 +1,8 @@
 const mcPokemon = {
-    template: `{{ pokemon }}`,
+    template: `{{ pokemon.name }} - {{pokemon.url}} `,
 
     props: {
         pokemon: {
-            type: String,
             required: true
         }
     },
@@ -16,3 +15,4 @@ const mcPokemon = {
 }
 
 app.component('mc-pokemon', mcPokemon)
+

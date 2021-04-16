@@ -1,4 +1,4 @@
-const HelloVueApp = {
+const vueApp = {
     delimiters: ['[[', ']]'],
 
     data() {
@@ -15,13 +15,42 @@ const HelloVueApp = {
             this.pokemons.push(this.message)
         },
 
-        loadPokemons(){
-            axios.get(`https://pokeapi.co/api/v2/ability/38/`)
-						.then(response => {
-							console.log(response.data)
-						})
-        }
+       
     }
 }
 
-const app = Vue.createApp(HelloVueApp)
+const options = {
+    moduleCache: {
+      vue: Vue
+    },
+    async getFile(url) {
+
+      const res = await fetch(url);
+      if ( !res.ok )
+        throw Object.assign(new Error(res.statusText + ' ' + url), { res });
+      return await res.text();
+    },
+    addStyle(textContent) {
+
+      const style = Object.assign(document.createElement('style'), { textContent });
+      const ref = document.head.getElementsByTagName('style')[0] || null;
+      document.head.insertBefore(style, ref);
+    },
+  }
+
+  const { loadModule } = window['vue3-sfc-loader'];
+
+
+  const app = Vue.createApp({
+    components: {
+      'mc-pokemons': Vue.defineAsyncComponent( () => loadModule('static/components/pokemons.vue', options) )
+    }
+  });
+
+
+/*
+https://pokeapi.co/api/v2/pokemon?limit=300
+https://pokeapi.co/api/v2/pokemon/2/
+https://pokeres.bastionbot.org/images/pokemon/2.png
+
+*/

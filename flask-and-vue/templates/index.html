@@ -6,22 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <div id="app">
         <my-header subtitle='Hello friend' /></my-header>
-        
-        <ul >
-            <li v-for="(pokemon, index) in pokemons" :key='index'>
-               [[index]]:  <mc-pokemon :pokemon=pokemon></mc-pokemon>
-            </li>
-        </ul>
+        <mc-pokemons></mc-pokemons>
+
         
         <div>          
             <h1>Index</h1>
-            <input type="text" v-model="message" /> <button v-on:click="reverseMessage">Reverse Message</button>
+            <input type="text" v-model="message" /> <button v-on:click="addPokemon">Add pokemon</button>
             <div>
                 Message: [[ message ]]
             </div>
@@ -33,9 +30,12 @@
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script src="{{ url_for('static', filename='app.js') }}"></script>
     <script src="{{ url_for('static', filename='components/header.js') }}"></script>
     <script src="{{ url_for('static', filename='components/pokemon.js') }}"></script>
+    <script src="{{ url_for('static', filename='components/footer.js') }}"></script>
     <script >
         app.mount('#app')
     </script>
