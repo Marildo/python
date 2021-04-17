@@ -29,5 +29,10 @@ span {
 img {
   height: 100%;
   width: 100%;
+  border: double 4px transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left,  #A0C9E4,#e56b6f);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 }
 </style>
