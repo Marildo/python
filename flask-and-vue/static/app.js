@@ -13,9 +13,7 @@ const vueApp = {
     methods: {
         addPokemon() {
             this.pokemons.push(this.message)
-        },
-
-       
+        }
     }
 }
 
@@ -41,8 +39,7 @@ const options = {
   }
 
   const { loadModule } = window['vue3-sfc-loader'];
-
-
+ 
   const app = Vue.createApp({
     components: {
       'mc-pokemons': Vue.defineAsyncComponent( () => loadModule('static/components/pokemons.vue', options) )
@@ -54,5 +51,7 @@ const options = {
 https://pokeapi.co/api/v2/pokemon?limit=300
 https://pokeapi.co/api/v2/pokemon/2/
 https://pokeres.bastionbot.org/images/pokemon/2.png
+
+ 
 
 */

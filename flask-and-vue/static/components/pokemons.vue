@@ -1,11 +1,13 @@
 <template>
   <div>
     <h4>Pokemons</h4>
-    <pokemon> </pokemon>
-    <button v-on:click="loadPokemons">Load pokemons</button>
+    <button v-on:click="loadPokemons" type="button" class="btn btn-primary">Load pokemons</button>
     <ul  v-for="(pokemon, index) in pokemons" :key="index">
          <mc-pokemon :pokemon="pokemon"></mc-pokemon>
     </ul>
+    
+    
+
   </div>
 </template>
 
