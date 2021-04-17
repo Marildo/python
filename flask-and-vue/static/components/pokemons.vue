@@ -1,18 +1,21 @@
 <template>
   <div>
     <h4>Pokemons</h4>
+    <pokemon> </pokemon>
     <button v-on:click="loadPokemons">Load pokemons</button>
-    <ul>
-      <li v-for="(pokemon, index) in pokemons" :key="index">
-        {{index + 1}}: <mc-pokemon :pokemon="pokemon"></mc-pokemon>
-      </li>
+    <ul  v-for="(pokemon, index) in pokemons" :key="index">
+         <mc-pokemon :pokemon="pokemon"></mc-pokemon>
     </ul>
   </div>
 </template>
 
 <script>
+
+import mcPokemon from './pokemon.vue'
+
 export default {
   name: "pokemons",
+  components: { mcPokemon },
 
   data() {
     return {
@@ -26,10 +29,7 @@ export default {
       axios
         .get(`https://pokeapi.co/api/v2/pokemon?limit=100`)
         .then((response) => response.data.results)
-        .then((data) => {
-          console.log(data[0]);
-          this.pokemons = data;
-        });
+        .then((data) =>    this.pokemons = data);
     },
   },
 };

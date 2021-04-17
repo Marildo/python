@@ -23,13 +23,15 @@ const options = {
     moduleCache: {
       vue: Vue
     },
-    async getFile(url) {
 
+    async getFile(url) {
+      console.log(url)  
       const res = await fetch(url);
       if ( !res.ok )
         throw Object.assign(new Error(res.statusText + ' ' + url), { res });
       return await res.text();
     },
+
     addStyle(textContent) {
 
       const style = Object.assign(document.createElement('style'), { textContent });
