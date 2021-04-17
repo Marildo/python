@@ -23,15 +23,14 @@ const options = {
     },
 
     async getFile(url) {
-      console.log(url)  
       const res = await fetch(url);
+      console.log(url, res)  
       if ( !res.ok )
         throw Object.assign(new Error(res.statusText + ' ' + url), { res });
       return await res.text();
     },
 
     addStyle(textContent) {
-
       const style = Object.assign(document.createElement('style'), { textContent });
       const ref = document.head.getElementsByTagName('style')[0] || null;
       document.head.insertBefore(style, ref);
@@ -42,6 +41,7 @@ const options = {
  
   const app = Vue.createApp({
     components: {
+      'mc-main-layout': Vue.defineAsyncComponent( ()=> loadModule('static/components/MainLayout.vue', options)),
       'mc-pokemons': Vue.defineAsyncComponent( () => loadModule('static/components/pokemons.vue', options) )
     }
   });

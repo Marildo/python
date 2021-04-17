@@ -17,7 +17,7 @@
 
 <script>
 
-import mcPokemon from './pokemon.vue'
+import mcPokemon from './Pokemon.vue'
 
 export default {
   name: "pokemons",
