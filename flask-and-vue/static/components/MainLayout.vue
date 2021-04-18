@@ -25,6 +25,6 @@ export default {
 .body-content {
   background-color:   #75848E;
   min-height: 70vh;
-  padding: 3em;
+  padding: 0.5em;
 }
 </style>
