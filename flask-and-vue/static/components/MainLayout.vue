@@ -1,8 +1,8 @@
 <template>
   <div>
     <mc-header />
-    <div class="container">
-         <mc-pokemons/>
+    <div class="body-box body-content">
+      <mc-pokemons />
     </div>
     <mc-footer />
   </div>
@@ -21,8 +21,10 @@ export default {
   },
 };
 </script>
- <style scoped>
-    .container {
-         min-height: 67vh;
-    }
- </style>
+<style scoped>
+.body-content {
+  background-color:   #75848E;
+  min-height: 70vh;
+  padding: 3em;
+}
+</style>

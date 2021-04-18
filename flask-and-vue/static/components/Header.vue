@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="secondary-box">
     <div class="container">
       <div class="row">
         <span class="col-3"> Meus Pokemons </span>
@@ -13,16 +13,13 @@
 
 <style scoped>
 nav {
-  background-color: #355070;
   height: 15rem;
   padding: 1em;
 }
 
 span {
-  font-family: fantasy;
   text-align: center;
   font-size: 60px;
-  color: #e56b6f;
   padding: auto;
 }
 

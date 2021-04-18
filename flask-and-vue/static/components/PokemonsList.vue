@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <h4>Todos Pokemons</h4>
     <button v-on:click="loadPokemons" type="button" class="btn btn-primary">
       Load pokemons
@@ -44,4 +44,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+  .content{
+   padding: auto;
+  }
+</style>
