@@ -13,7 +13,7 @@
 
 <style scoped>
 nav {
-  height: 15rem;
+  height: 11rem;
   padding: 1em;
 }
 
@@ -24,7 +24,7 @@ span {
 }
 
 img {
-  height: 100%;
+  height: 70%;
   width: 100%;
   border: double 4px transparent;
   border-radius: 20px;

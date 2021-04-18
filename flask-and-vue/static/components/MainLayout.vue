@@ -23,8 +23,8 @@ export default {
 </script>
 <style scoped>
 .body-content {
-  background-color:   #75848E;
+  background-color: #75848e;
   min-height: 70vh;
-  padding: 0.5em;
+  padding: 0.3em;
 }
 </style>
