@@ -133,3 +133,8 @@ api_flask/.idea/
 flask/.idea/
 
 CallsController/.idea
+
+my-pokemons/vue/node_modules
+my-pokemons/vue/dist
+my-pokemons/flask/.idea
+my-pokemons/flask/venv
