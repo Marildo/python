@@ -2,7 +2,8 @@
   <div>
     <mc-header />
     <div class="body-box body-content">
-      <mc-pokemons />
+      <mc-pokemons />  
+      <router-view></router-view>
     </div>
     <mc-footer />
   </div>

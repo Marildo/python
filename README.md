@@ -6,3 +6,6 @@ https://towardsdatascience.com/sqlalchemy-python-tutorial-79a577141a91
 https://leportella.com/pt-br/tutorial-sqlalchemy/
 
 pyuic5 -x sourcefile -o  outputfile
+
+#Django
+https://bezkoder.com/django-vue-js-rest-framework/

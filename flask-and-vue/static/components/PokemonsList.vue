@@ -1,5 +1,6 @@
 <template>
   <div class="content">
+        <button @click="test()">test</button>
     <div>
       <ul class="pokemons">
         <li v-for="(pokemon, index) in pokemons" :key="index">
@@ -29,11 +30,13 @@
         </li>
       </ul>
     </nav>
+
   </div>
 </template>
 
 <script>
 import mcPokemonCard from "./PokemonCard.vue";
+
 
 export default {
   name: "pokemons",
@@ -119,7 +122,8 @@ export default {
 
     test() {
       console.log("testing");
-      axios.get(`test`).then((response) => console.log(response));
+    //  axios.get(`test`).then((response) => console.log(response));
+       console.log(this.router)
     },
   },
 };
