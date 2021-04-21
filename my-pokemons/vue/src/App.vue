@@ -1,17 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+ <img alt="Vue logo" src="./assets/logo.png" /> 
+  
+  <HelloWorld msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import filters from './utils/filters.js'
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+  },
+
+  data(){
+    return {
+      pa:'/img/logo.png'
+    }
+  },
+
+  mounted(){
+     
+  },
+
+  methods: {
+    load2(img) {
+      return filters.loadImage(img)
+    },
+  },
+};
 </script>
 
 <style>
