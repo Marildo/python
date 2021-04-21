@@ -1,4 +1,5 @@
 const isProduction = process.env.NODE_ENV === 'production'
+console.log(process.env.NODE_ENV)
 
 module.exports = {
   filenameHashing: false,
@@ -12,7 +13,7 @@ module.exports = {
       .use("url-loader")
       .tap((options) => {
         options.name = "images/[name].[ext]";
-        options.publicPath = isProduction ? 'dist/' : 'assets/';
+        options.publicPath = isProduction ? 'dist/' : '/';
         return options;
       });
   },
