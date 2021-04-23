@@ -1,8 +1,76 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
     color: #e56b6f;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main {
+    padding: 1em;
+    min-height: 62vh;
+}
+
+footer {
+    width: 100%;
+    margin: auto;
+    padding: 0.5em 0.1em 0.5em 0.1em;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    margin: auto;
+    font-size: 30px;
+    font-weight: 800;
+    color: dimgray;
 }
 
 .secondary-box {
     background-color: #355070;
+}
+
+#box-header {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    border-bottom: 1px #355070 solid;
+}
+
+#box-menu {
+    display: grid;
+    grid-template-rows: 2fr;
+}
+
+#menu {
+    margin-bottom: .5em;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0%;   
+}
+
+#menu ul li{
+    margin: auto;
+    width: 120px;
+    background-color: chocolate;
+    display: inline;
+}
+
+#menu ul li a{
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    transition: backgound.3s;
+}
+
+#menu ul li a:hover{
+    color: blue;
 }

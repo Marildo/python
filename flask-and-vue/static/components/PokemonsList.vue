@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-        <button @click="test()">test</button>
+    <button @click="test()">test</button>
     <div>
       <ul class="pokemons">
         <li v-for="(pokemon, index) in pokemons" :key="index">
@@ -30,13 +30,11 @@
         </li>
       </ul>
     </nav>
-
   </div>
 </template>
 
 <script>
 import mcPokemonCard from "./PokemonCard.vue";
-
 
 export default {
   name: "pokemons",
@@ -112,8 +110,8 @@ export default {
       if (start < 1) {
         start = 1;
       }
-      const stop = start + 9
-      console.log('start: ',start, 'stop: ',stop  )
+      const stop = start + 9;
+      console.log("start: ", start, "stop: ", stop);
 
       for (let index = start; index < stop; index++) {
         this.pages.push(index);
@@ -122,8 +120,8 @@ export default {
 
     test() {
       console.log("testing");
-    //  axios.get(`test`).then((response) => console.log(response));
-       console.log(this.router)
+      //  axios.get(`test`).then((response) => console.log(response));
+      console.log(this.router);
     },
   },
 };

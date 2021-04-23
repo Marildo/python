@@ -22,6 +22,18 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/todos')
+def all():
+    return render_template('all.html')
+
+
+@app.route('/favoritos')
+def favorites():
+    return render_template('favorites.html')
+
+
+
+
 @app.route('/test/')
 def test():
     print('chegou até aqui')
